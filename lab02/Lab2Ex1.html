@@ -50,62 +50,49 @@ graphics.stroke();
 graphics.fillPoly(200,200,400,200,300,350);
 graphics.stroke();
 
+graphics.fillStyle="rgb(255,255,255)"
+graphics.fillOval(250,175,15,15);
+graphics.fillOval(340,175,15,15);
 
-        graphics.fillStyle="rgb(255,255,255)"
-		graphics.fillOval(250, 175, 15, 15);
-		graphics.fillOval(340, 175, 15, 15);
+graphics.fillStyle="rgb(0,0,0)"
+graphics.fillOval(250,175,10,10);
+graphics.fillOval(340,175,10,10);
 
-		graphics.fillStyle="rgb(0,0,0)"
-		graphics.fillOval(250, 175, 10, 10);
-		graphics.fillOval(340, 175, 10, 10);
-
-		graphics.fillStyle="rgb(255,255,255)"
-		graphics.fillOval(247, 170, 4, 4);
-        graphics.fillOval(337, 170, 4, 4);
+graphics.fillStyle="rgb(255,255,255)"
+graphics.fillOval(247,170,4,4);
+graphics.fillOval(337,170,4,4);
        
 
-        graphics.beginPath();
-        graphics.moveTo(260,240);
-        graphics.quadraticCurveTo(300,310,340,240);
-        graphics.stroke();
-        graphics.quadraticCurveTo(300,254,260,240);
-        graphics.stroke();
-        graphics.fillStyle="rgb(0,0,0)";
-        graphics.fill();
-		graphics.closePath();
+graphics.beginPath();
+graphics.moveTo(260,240);
+graphics.quadraticCurveTo(300,310,340,240);
+graphics.stroke();
+graphics.quadraticCurveTo(300,254,260,240);
+graphics.stroke();
+graphics.fillStyle="rgb(0,0,0)";
+graphics.fill();
+graphics.closePath();
         
 
+graphics.beginPath();
+graphics.moveTo(260,230)
+graphics.quadraticCurveTo(265,240,255,250);
+graphics.stroke();
+graphics.closePath();
 
-        graphics.beginPath();
-        graphics.moveTo(260,230)
-        graphics.quadraticCurveTo(265,240,255,250);
-        graphics.stroke();
-        graphics.closePath();
-
-        graphics.beginPath();
-        graphics.moveTo(340,230)
-        graphics.quadraticCurveTo(337,240,345,250);
-        graphics.stroke();
-        graphics.closePath();
-
+graphics.beginPath();
+graphics.moveTo(340,230)
+graphics.quadraticCurveTo(337,240,345,250);
+graphics.stroke();
+graphics.closePath();
        
-		graphics.fillStyle="rgb(255,255,255)"
-        graphics.fillPoly(285,247,285,265,315,265,315,247);		
+graphics.fillStyle="rgb(255,255,255)"
+graphics.fillPoly(285,247,285,265,315,265,315,247);		
        
 
-        graphics.moveTo(300,247);
-        graphics.lineTo(300,265);     
-        graphics.stroke();   
-
-        
-      
-
-
-        
-        
-
-
-
+graphics.moveTo(300,247);
+graphics.lineTo(300,265);     
+ graphics.stroke();   
 
         
     } // end of draw()
