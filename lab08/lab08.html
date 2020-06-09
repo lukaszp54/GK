@@ -2,9 +2,9 @@
 <head>
 <meta charset="UTF-8">
 <title>CS 424 Lab 9</title>
-<script src="build/three.js"></script>
-<script src="resources/OrbitControls.js"></script>
-<script src="three-Legacy-JSON-Loader-master/LegacyJSONLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.117.1/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.117.1/examples/js/loaders/OBJLoader.js"></script>
 
    <script>
    "use strict";
@@ -48,8 +48,11 @@
        scene.add(camera);
        
 
-        karuzela = new THREE.Group();
-        scene.add(karuzela);
+    karuzela = new THREE.Group();
+    scene.add(karuzela);
+
+    var loader = new THREE.OBJLoader();
+    var color = new THREE.Color(0x382B29);
 
   
     podest = new THREE.Mesh(
@@ -61,7 +64,7 @@
         new THREE.CylinderGeometry(0, 6, 1.5, 1000),
         new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load('resources/paisley.jpg') }))
     dach.position.y += 5;
-	karuzela.add(dach);
+    karuzela.add(dach);
 
 
     kostka = new THREE.Mesh(
@@ -73,58 +76,117 @@
 
 
     slup = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.15, 0.15, 5, 20),
-        new THREE.MeshBasicMaterial( {color: 0x382B29} ))
+        new THREE.CylinderGeometry(0.15, 0.15, 4.8, 20),
+        new THREE.MeshPhongMaterial( {
+            color: 0x382B29,
+            shininess: 50}));
     slup.position.y += 2.1;
     slup.position.x += 3;
     slup.position.z += -1.4;
     karuzela.add(slup);
+
+    loader.load('resources/16267_American_Paint_Horse_Nuetral_new.obj', function(kon){       
+        kon.scale.set(0.03,0.03,0.03);
+        kon.rotation.x = 4.75;
+        kon.rotation.z = -6;
+        kon.position.z += -2;
+        kon.position.x += 2.6;
+        kon.position.y += 0.5;
+	    karuzela.add(kon);
+		}
+	)
 	
 
 	slup2 = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.15, 0.15, 5, 20),
-        new THREE.MeshBasicMaterial( {color: 0x382B29} ))
+        new THREE.CylinderGeometry(0.15, 0.15, 4.8, 20),
+        new THREE.MeshPhongMaterial( {
+            color: 0x382B29,
+            shininess: 50}));
 	slup2.position.y += 2.1;
 	slup2.position.z += -3.7;
-	karuzela.add(slup2);
+    karuzela.add(slup2);
+        
+    loader.load('resources/16267_American_Paint_Horse_Nuetral_new.obj', function(kon2){
+        kon2.scale.set(0.03,0.03,0.03);
+        kon2.rotation.x = 4.75;
+        kon2.rotation.z = -5;
+        kon2.position.z += -3.85;
+        kon2.position.x += -0.9;
+        kon2.position.y += 0.5;
+	    karuzela.add(kon2);
+		}
+	)
 
     slup3 = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.15, 0.15, 5, 20),
-        new THREE.MeshBasicMaterial( {color: 0x382B29} ))
+        new THREE.CylinderGeometry(0.15, 0.15, 4.8, 20),
+        new THREE.MeshPhongMaterial( {
+            color: 0x382B29,
+            shininess: 50}));
     slup3.position.y += 2.1;
     slup3.position.x += -3;
 	slup3.position.z += -1.4;
     karuzela.add(slup3);
+
+    
+    loader.load('resources/16267_American_Paint_Horse_Nuetral_new.obj', function(kon3){
+        kon3.scale.set(0.03,0.03,0.03);
+        kon3.rotation.x = 4.75;
+        kon3.rotation.z = -3.9;
+        kon3.position.x += -3.4;
+        kon3.position.z += -0.7;
+        kon3.position.y += 0.5;
+	    karuzela.add(kon3);
+		}
+	)
 	
 
     slup4 = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.15, 0.15, 5, 20),
-        new THREE.MeshBasicMaterial( {color: 0x382B29} ) )
+        new THREE.CylinderGeometry(0.15, 0.15, 4.8, 20),
+        new THREE.MeshPhongMaterial( {
+            color: 0x382B29,
+            shininess: 50}));
     slup4.position.y += 2.1;
     slup4.position.x += -2;
 	slup4.position.z += 2.6;
     karuzela.add(slup4);
-	
+
+    
+    loader.load('resources/16267_American_Paint_Horse_Nuetral_new.obj', function(kon4){
+        kon4.scale.set(0.03,0.03,0.03);
+        kon4.rotation.x = 4.75;
+        kon4.rotation.z = -0.8;
+        kon4.position.x += 2.3;
+        kon4.position.z += 1.9;
+        kon4.position.y += 0.5;
+	    karuzela.add(kon4);
+		}
+	)
+
 
 	slup5 = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.15, 0.15, 5, 20),
-        new THREE.MeshBasicMaterial( {color: 0x382B29} ))
+        new THREE.CylinderGeometry(0.15, 0.15, 4.8, 20),
+        new THREE.MeshPhongMaterial( {
+            color: 0x382B29,
+            shininess: 50}));
     slup5.position.y += 2.1;
     slup5.position.x += 2;
 	slup5.position.z += 2.6;
     karuzela.add(slup5);
 
+    karuzela.position.y -= 2;
     
-    var loader = new THREE.LegacyJSONLoader();
-	loader.load(
-		'resources/horse.js',
-		function(kon){
-			kon.rotation.x += 0.3;
-			kon.rotation.z += 3.8;
-			kon.position.y += 1.2;
-			karuzela.add(kon);
+
+    loader.load('resources/16267_American_Paint_Horse_Nuetral_new.obj', function(kon5){
+        kon5.scale.set(0.03,0.03,0.03);
+        kon5.rotation.x = 4.75;
+        kon5.rotation.z = -2.4;
+        kon5.position.x += -1.3;
+        kon5.position.z += 3;
+        kon5.position.y += 0.5;
+	    karuzela.add(kon5);
 		}
 	)
+
 
     
    } // end function createWorld()
@@ -142,7 +204,7 @@
        if (loopFrame > 120) {
            loopFrame = 240 - loopFrame;
        }
-       karuzela.rotation.y += 0.005;
+       karuzela.rotation.y -= 0.005;
        
    }
    
