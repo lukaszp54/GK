@@ -66,9 +66,8 @@
     }
  
     void main() {
-
         float distance = distance(vec2(0.5), gl_PointCoord);
-        gl_FragColor = vec4(vcolor, 1.0);
+        gl_FragColor = vec4(vec3(vcolor),0.5);
         if (type > 4.0){
             if ( distance > circle(type, 0.4, vec2(gl_PointCoord.x - 0.5, gl_PointCoord.y - 0.5)))
             {
@@ -100,7 +99,6 @@ var u_type_loc;
 var POINT_COUNT = 30;   // How many points to draw.
 var POINT_SIZE = 64;    // Size in pixel of the square drawn for each point.
  
-var temp=0;
 var changeColor = false; 
 var changePolygon = false;
 var variable;
@@ -142,11 +140,8 @@ function render() {
     }
     // Now, draw the points as a primitive of type gl.POINTS
    
-    if(temp==0) 
     gl.drawArrays(gl.POINTS, 0, POINT_COUNT);
-     else 
-    gl.drawArrays(gl.LINE_LOOP, 0, POINT_COUNT);
-   
+
     if (gl.getError() != gl.NO_ERROR) {
         console.log("During render, a GL error has been detected.");
     }
@@ -268,7 +263,6 @@ function initGL() {
     u_pointSize_loc = gl.getUniformLocation(prog,"u_pointSize");
     a_coords_loc = gl.getAttribLocation(prog,"a_coords");
     a_color_loc = gl.getAttribLocation(prog, "color");
- 
     u_type_loc = gl.getUniformLocation(prog, "u_type");
     /* Assign initial values to uniforms. */    
    
